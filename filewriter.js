@@ -1,6 +1,6 @@
 let fs = require('fs-extra');
-
-
+let logique = require('./LogiqueDumb.js')
+var parser = require('./parser.js');
 let mockProcess = function (type) {
     return [[1], [4, 5], [2], [6, 3]];
 };
@@ -35,11 +35,11 @@ exports.write = function () {
     fs.ensureDir(dir).then((err) => {
         console.log(err);
 
-        writeInDir(mockProcess('A'), dir, 'A');
-        writeInDir(mockProcess('B'), dir, 'B');
-        writeInDir(mockProcess('C'), dir, 'C');
-        writeInDir(mockProcess('D'), dir, 'D');
-        writeInDir(mockProcess('E'), dir, 'E');
+        writeInDir(logique.logique(parser.parse('input/A')), dir, 'A');
+        writeInDir(logique.logique(parser.parse('input/B')), dir, 'B');
+        /**writeInDir(logique.logique(parser.parse('input/C')), dir, 'C');
+        writeInDir(logique.logique(parser.parse('input/D')), dir, 'D');
+        writeInDir(logique.logique(parser.parse('input/E')), dir, 'E');**/
     });
 
 

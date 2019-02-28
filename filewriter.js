@@ -43,7 +43,7 @@ exports.write = function () {
         writeInDir(logique.logique(parser.parse('input/E')), dir, 'E');
 
         // Do in promise
-
+/**
         var archive = archiver('zip', {
             zlib: {level: 9} // Sets the compression level.
         });
@@ -51,7 +51,7 @@ exports.write = function () {
         var output = fs.createWriteStream(__dirname + '/' + dir + '/app.zip');
         archive.pipe(output);
         archive.directory('app', false);
-        archive.finalize();
+        archive.finalize();**/
     });
 
 

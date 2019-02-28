@@ -8,7 +8,7 @@ exports.parse = function (fichier) {
         var ligne = data.split("\n");
         var objet = {};
         objet.nbphotos = ligne[0];
-        objet.photos = ligne.slice(1, ligne.length-1).map(toPhoto);
+        objet.photos = ligne.slice(1, ligne.length - 1).map(toPhoto);
         return objet;
 
     }
@@ -23,7 +23,8 @@ exports.parse = function (fichier) {
             photo.nbTag = tab[1];
             photo.tag = {};
             photo.tagArray = tab.slice(2);
-            photo.tagArray.map(tag => photo.tag[tag] = true);
+
+            photo.tagArray[photo.tagArray.length - 1]=photo.tagArray[photo.tagArray.length - 1].slice(0, photo.tagArray[photo.tagArray.length - 1].length)
             return photo
         }
     }

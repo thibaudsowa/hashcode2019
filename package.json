@@ -1,0 +1,33 @@
+{
+  "name": "hashcode2019",
+  "version": "1.0.0",
+  "description": "hashcode2019 by Mona Leasa team",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thibaudsowa/hashcode2019.git"
+  },
+  "keywords": [
+    "hashcode",
+    "leasa",
+    "nanceo",
+    "pharmagest"
+  ],
+  "contributors": [
+    "Etienne Deruelle",
+    "Léo Gerberon",
+    "Adam Sooga",
+    "Thibaud Sowa"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thibaudsowa/hashcode2019/issues"
+  },
+  "homepage": "https://github.com/thibaudsowa/hashcode2019#readme",
+  "dependencies": {
+    "fs-extra": "^7.0.1"
+  }
+}

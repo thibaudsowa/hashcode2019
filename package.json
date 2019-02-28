@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/thibaudsowa/hashcode2019#readme",
   "dependencies": {
+    "archiver": "^3.0.0",
     "fs-extra": "^7.0.1"
   }
 }

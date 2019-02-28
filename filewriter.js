@@ -1,4 +1,5 @@
 let fs = require('fs-extra');
+let archiver = require('archiver');
 
 
 let mockProcess = function (type) {
@@ -17,29 +18,39 @@ let writeInDir = function (data, dir, filename) {
         }
         dataString = dataString.trim();
 
-        if(i !== data.length -1) {
+        if (i !== data.length - 1) {
             dataString += '\n';
         }
     }
 
 
-    fs.appendFile(dir + '/' + filename, dataString).then((err) => console.log(err));
+    return fs.appendFile(dir + '/' + filename, dataString).then((err) => console.log(err));
 
 };
 
 exports.write = function () {
 
     let now = new Date().getTime();
-    let dir = './output/' + now;
+    let dir = 'output/' + now;
 
-    fs.ensureDir(dir).then((err) => {
-        console.log(err);
+    fs.ensureDir(dir).then(() => {
 
         writeInDir(mockProcess('A'), dir, 'A');
         writeInDir(mockProcess('B'), dir, 'B');
         writeInDir(mockProcess('C'), dir, 'C');
         writeInDir(mockProcess('D'), dir, 'D');
         writeInDir(mockProcess('E'), dir, 'E');
+
+        // Do in promise
+
+        var archive = archiver('zip', {
+            zlib: {level: 9} // Sets the compression level.
+        });
+
+        var output = fs.createWriteStream(__dirname + '/' + dir + '/app.zip');
+        archive.pipe(output);
+        archive.directory('app', false);
+        archive.finalize();
     });
 
 

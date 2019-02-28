@@ -38,9 +38,9 @@ exports.write = function () {
 
         writeInDir(logique.logique(parser.parse('input/A')), dir, 'A');
         writeInDir(logique.logique(parser.parse('input/B')), dir, 'B');
-        /**writeInDir(logique.logique(parser.parse('input/C')), dir, 'C');
+        writeInDir(logique.logique(parser.parse('input/C')), dir, 'C');
         writeInDir(logique.logique(parser.parse('input/D')), dir, 'D');
-        writeInDir(logique.logique(parser.parse('input/E')), dir, 'E');**/
+        writeInDir(logique.logique(parser.parse('input/E')), dir, 'E');
 
         // Do in promise
 
